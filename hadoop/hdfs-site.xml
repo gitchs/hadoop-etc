@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+
+  <property>
+    <name>dfs.blocksize</name>
+
+    <!-- production setting, block size = 256M -->
+    <!-- <value>268435456</value> -->
+
+    <!-- test purpose, block size = 1M -->
+    <!-- <value>1048576</value> -->
+
+    <!-- test purpose, block size = 64M -->
+    <value>67108864</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:///data/hdfs/namenode</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:///data/hdfs/datanode</value>
+  </property>
+  <property>
+    <name>dfs.client.read.shortcircuit</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>dfs.domain.socket.path</name>
+    <value>/data/hdfs/runtime/datanode.sock</value>
+  </property>
+
+  <property>
+    <name>dfs.hosts.exclude</name>
+    <value>/opt/hadoop-3.3.6/etc/hadoop/dfs.hosts.exclude</value>
+  </property>
+
+  <property>
+    <name>dfs.hosts</name>
+    <value>/opt/hadoop-3.3.6/etc/hadoop/dfs.hosts</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.servicerpc-address</name>
+    <value>vm-16-17-centos:8040</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.lifeline.rpc-address</name>
+    <value>vm-16-17-centos:8050</value>
+  </property>
+
+  <property>
+    <name>dfs.heartbeat.interval</name>
+    <value>3s</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.handler.count</name>
+    <value>10</value>
+  </property>
+</configuration>
